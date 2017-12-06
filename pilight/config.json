@@ -7,11 +7,17 @@
   "description": "Pilight server",
   "startup": "services",
   "boot": "auto",
-  "devices": ["/dev/mem:/dev/mem:rw"],
+  "devices": ["/dev/mem:/dev/mem:rw","/dev/ttyUSB0"],
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
-  "options": {"gpio_platform": "raspberrypi3"},
-  "schema": {"gpio_platform": "str"},
+  "options": {
+  "hardware": {
+    "433nano": {
+      "comport": "/dev/ttyUSB0"
+    }
+  }
+},
+  "schema": "false",
   "webui": "http://[HOST]:[PORT:5001]",
   "ports": {
     "5000/tcp": 5000,
