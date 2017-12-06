@@ -7,7 +7,7 @@
   "description": "Pilight server",
   "startup": "services",
   "boot": "auto",
-  "devices": ["/dev/mem:/dev/mem:rw"],
+  "devices": ["/dev/mem:/dev/mem:rw","/dev/ttyUSB0:/dev/ttyUSB0:rwm"],
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
   "options": {
