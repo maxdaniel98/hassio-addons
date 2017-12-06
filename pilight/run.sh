@@ -9,5 +9,7 @@ CONFIG_PATH=/data/options.json
 #sed -i 's/\("comport"\): \?".*"\(.*\)/\1: "'"$DEVICE"'"\2/' /etc/pilight/config.json
 #cat CONFIG_PATH > /etc/pilight/config.json
 
+ls /data
+
 # Run pilight in foreground
 exec pilight-daemon -D
