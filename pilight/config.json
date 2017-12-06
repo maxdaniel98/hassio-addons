@@ -11,8 +11,6 @@
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
   "options": {},
-	"registry": {}
-},
   "schema": "false",
   "webui": "http://[HOST]:[PORT:5001]",
   "ports": {
