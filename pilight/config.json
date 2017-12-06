@@ -10,7 +10,7 @@
   "devices": ["/dev/mem:/dev/mem:rw","/dev/ttyUSB0:/dev/ttyUSB0:rwm"],
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
-  "options": {},
+  "options": {"device":"/dev/ttyUSB0"},
   "schema": "False",
   "webui": "http://[HOST]:[PORT:5001]",
   "ports": {
