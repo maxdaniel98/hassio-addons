@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 ARG BUILD_ARCH
 ARG BUILD_VERSION
 
-LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
+LABEL maintainer "Max van den Bosch <maxdaniel98@gmail.com>"
 
 RUN apt-get update && \
     apt-get install -y wget gnupg jq && \
