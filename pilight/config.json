@@ -11,7 +11,7 @@
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
   "options": {"device":"/dev/ttyUSB0"},
-  "schema": "False",
+  "schema": {"device": "str"},
   "webui": "http://[HOST]:[PORT:5001]",
   "ports": {
     "5000/tcp": 5000,
