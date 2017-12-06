@@ -11,13 +11,9 @@
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
   "options": {
-  "hardware": {
-    "433nano": {
-      "comport": "/dev/ttyUSB0"
-    }
-  }
-},
-  "schema": "false",
+    "device": "/dev/ttyUSB0"
+  },
+  "schema": {"device": "str"},
   "webui": "http://[HOST]:[PORT:5001]",
   "ports": {
     "5000/tcp": 5000,

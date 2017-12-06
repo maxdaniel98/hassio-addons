@@ -2,12 +2,12 @@
 
 # Extract config data
 CONFIG_PATH=/data/options.json
-GPIO_PLATFORM=$(jq -r '.gpio_platform // empty' "$CONFIG_PATH")
-GPIO_PLATFORM=${GPIO_PLATFORM:-none} # default to none
+DEVICE=$(jq -r '.device // empty' "$CONFIG_PATH")
+DEVICE=${GPIO_PLATFORM:-none} # default to none
 
 # Update pilight config
-#sed -i 's/\("gpio-platform"\): \?".*"\(.*\)/\1: "'"$GPIO_PLATFORM"'"\2/' /etc/pilight/config.json
-cat CONFIG_PATH > /etc/pilight/config.json
+sed -i 's/\("comport"\): \?".*"\(.*\)/\1: "'"$DEVICE"'"\2/' /etc/pilight/config.json
+#cat CONFIG_PATH > /etc/pilight/config.json
 
 # Run pilight in foreground
 exec pilight-daemon -D
