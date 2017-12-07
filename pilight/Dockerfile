@@ -4,12 +4,17 @@ FROM $BUILD_FROM
 ARG BUILD_ARCH
 ARG BUILD_VERSION
 
-LABEL maintainer "Max van den Bosch <maxdaniel98@gmail.com>"
+LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
 
-RUN git clone --depth 5 -b master https://www.github.com/pilight/pilight.git && \
-    cd pilight && \
-    chmod +x setup.sh && \
-    ./setup.sh install
+RUN apt-get update && \
+    apt-get install -y wget gnupg jq && \
+    echo "deb http://apt.pilight.org/ stable main" > /etc/apt/sources.list.d/pilight.list && \
+    wget -O - http://apt.pilight.org/pilight.key | apt-key add - && \
+    apt-get update && \
+    apt-get install -y pilight && \
+    apt-get remove -y --purge wget && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY pilight-config.json /etc/pilight/config.json
 COPY run.sh /run.sh
